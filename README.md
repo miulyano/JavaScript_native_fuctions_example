@@ -1,2 +1,2 @@
-# frontend-components-native-
-`Native components css and js`
+# JavaScript_native_fuctions_example
+`Native js function examples`

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body id="body">
+
+<div id="dom-view"></div>
+
+<ul id="list">
+    <li>hi!!</li>
+</ul>
+<div>
+    <h4>Добавление элемента
+    </h4>
+    <label>Имя тега
+        <input id="element-tag" type="text">
+    </label>
+    <label>Текст
+        <textarea id="element-value"></textarea>
+    </label>
+    <button onclick="addElement()">Add Element</button>
+</div>
+<hr>
+<div>
+    <button onclick="removeElement('list')">delete Element</button>
+</div>
+<div>
+    <button onclick="removeTextElement('list')">delete Text Element</button>
+</div>
+<div>
+    <button onclick="removeTextElementNew('list', 0)">delete Text Element (recursion)</button>
+</div>
+<div>
+    <button onclick="Func()">scan DOM</button>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

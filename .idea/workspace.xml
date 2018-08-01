@@ -25,12 +25,25 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/events/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="579">
               <caret line="96" column="27" lean-forward="true" selection-start-line="96" selection-start-column="27" selection-end-line="96" selection-end-column="27" />
+=======
+    <leaf>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="72">
+                <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+                <folding />
+              </first_editor>
+              <second_editor />
+>>>>>>> 1a4a36353649c18427c7ccb079efc6f85b506416
             </state>
           </provider>
         </entry>
@@ -88,6 +101,11 @@
               <item name="JavaScript_native_fuctions_example" type="462c0819:PsiDirectoryNode" />
               <item name="events" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="JavaScript_native_fuctions_example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaScript_native_fuctions_example" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Array_methods" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -123,13 +141,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1532986083714</updated>
+<<<<<<< HEAD
       <workItem from="1532986085472" duration="200000" />
       <workItem from="1533154909015" duration="3713000" />
+=======
+      <workItem from="1532986085472" duration="691000" />
+>>>>>>> 1a4a36353649c18427c7ccb079efc6f85b506416
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="3913000" />
+=======
+    <option name="totallyTimeSpent" value="691000" />
+>>>>>>> 1a4a36353649c18427c7ccb079efc6f85b506416
   </component>
   <component name="ToolWindowManager">
     <frame x="102" y="27" width="1671" height="1027" extended-state="0" />
@@ -166,6 +192,7 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
+<<<<<<< HEAD
           <first_editor relative-caret-position="27">
             <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
           </first_editor>
@@ -178,6 +205,11 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="27">
             <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+=======
+          <first_editor relative-caret-position="72">
+            <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+            <folding />
+>>>>>>> 1a4a36353649c18427c7ccb079efc6f85b506416
           </first_editor>
           <second_editor />
         </state>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events tutorial</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(to bottom, #7e7eff 0%, #fff 100%);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            font-family: Arial;
+        }
+        .container {
+            margin: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container__heading {
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+        .container__label {
+            width: 100%;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .container-input {
+            padding: 10px;
+            font-size: 16px;
+            display: block;
+            border-radius: 4px;
+            border: none;
+            width: 100%;
+        }
+        .create-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 14px;
+            font-weight: 700;
+            background-color: #6e6eff;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            text-transform: uppercase;
+            transition: background-color .2s ease-in-out, transform .1s ease-in-out;
+        }
+        .create-button:hover {
+            background-color: #6464d8;
+        }
+        .create-button:active {
+            transform: scale(.95);
+        }
+    </style>
+</head>
+<body id="body">
+<div class="container">
+    <h2 class="container__heading">Create an arbitrary block</h2>
+    <label class="container__label"> indicate <b>width</b>:
+        <input type="number" id="blockWidth" class="container-input">
+    </label>
+    <label class="container__label"> indicate <b>height</b>:
+        <input type="number" id="blockHeight" class="container-input">
+    </label>
+    <label class="container__label"> indicate <b>border-radius</b>:
+        <input type="number" id="blockRadius" class="container-input">
+    </label>
+    <label class="container__label"> indicate <b>background-color</b>:
+        <input type="text" id="blockColor" class="container-input">
+    </label>
+    <button class="create-button" id="createButton">Create block</button>
+</div>
+<script>
+    let button = document.getElementById('createButton'),
+        blockWidth = document.getElementById('blockWidth'),
+        blockHeight = document.getElementById('blockHeight'),
+        blockRadius = document.getElementById('blockRadius'),
+        blockColor = document.getElementById('blockColor');
+    button.addEventListener('click', function() {
+        let block = document.createElement('div');
+        block.style.width = blockWidth.value + 'px';
+        block.style.height = blockHeight.value + 'px';
+        block.style.borderRadius = blockRadius.value + 'px';
+        block.style.backgroundColor = blockColor.value;
+        body.appendChild(block);
+        console.log(block);
+    })
+</script>
+</body>
+</html>

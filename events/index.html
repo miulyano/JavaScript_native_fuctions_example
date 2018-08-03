@@ -65,10 +65,11 @@
     </style>
 </head>
 <body id="body">
+<div id="new-block" style="width: 50px; height: 50px; background-color: red; position: absolute; top: 0; left: 0"></div>
 <div class="container">
     <h2 class="container__heading">Create an arbitrary block</h2>
     <label class="container__label"> indicate <b>width</b>:
-        <input type="number" id="blockWidth" class="container-input">
+        <input type="number" id="blockWidth" class="container-input" autofocus>
     </label>
     <label class="container__label"> indicate <b>height</b>:
         <input type="number" id="blockHeight" class="container-input">
@@ -86,16 +87,48 @@
         blockWidth = document.getElementById('blockWidth'),
         blockHeight = document.getElementById('blockHeight'),
         blockRadius = document.getElementById('blockRadius'),
-        blockColor = document.getElementById('blockColor');
-    button.addEventListener('click', function() {
-        let block = document.createElement('div');
-        block.style.width = blockWidth.value + 'px';
-        block.style.height = blockHeight.value + 'px';
-        block.style.borderRadius = blockRadius.value + 'px';
-        block.style.backgroundColor = blockColor.value;
-        body.appendChild(block);
-        console.log(block);
-    })
+        blockColor = document.getElementById('blockColor'),
+        block = document.createElement('div'),
+        offsetX = 0,
+        offsetY = 0,
+        activeElement,
+        newBlock = document.querySelector('#new-block'),
+        createBlock = function () {
+          block.style.width = blockWidth.value + 'px';
+          block.style.height = blockHeight.value + 'px';
+          block.style.borderRadius = blockRadius.value + 'px';
+          block.style.backgroundColor = blockColor.value;
+          block.style.position = 'absolute';
+          block.style.top = '0';
+          block.style.left = '0';
+          block.classList.add('new-block');
+          if(!blockWidth.value || !blockHeight.value || !blockRadius.value || !blockColor.value) {
+            block.removeEventListener('click',createBlock);
+            console.error('введите данные');
+          } else {
+            body.appendChild(block);
+
+          }
+        },
+        mDown = function (e) {
+          activeElement = e.target;
+          offsetX = e.target.offsetX;
+          offsetY = e.target.offsetY;
+          console.log(activeElement);
+          console.log(e);
+        },
+        mUp = function () {
+          activeElement = null;
+        },
+        dragElement = function (e) {
+          if(activeElement) {
+            activeElement.style.top = (e.clientY - offsetY) + 'px';
+          }
+        };
+        button.addEventListener('click', createBlock);
+        document.addEventListener('mousemove', dragElement);
+        newBlock.addEventListener('mousedown', mDown);
+        newBlock.addEventListener('mouseup', mUp);
 </script>
 </body>
 </html>

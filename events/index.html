@@ -64,8 +64,8 @@
         }
     </style>
 </head>
-<body id="body">
-<div id="new-block" style="width: 50px; height: 50px; background-color: red; position: absolute; top: 0; left: 0"></div>
+<body>
+<!--<div id="new-block" style="width: 50px; height: 50px; background-color: red; position: absolute; top: 0; left: 0"></div>-->
 <div class="container">
     <h2 class="container__heading">Create an arbitrary block</h2>
     <label class="container__label"> indicate <b>width</b>:
@@ -92,7 +92,7 @@
         offsetX = 0,
         offsetY = 0,
         activeElement,
-        newBlock = document.querySelector('#new-block'),
+        //newBlock = document.querySelector('#new-block'),
         createBlock = function () {
           block.style.width = blockWidth.value + 'px';
           block.style.height = blockHeight.value + 'px';
@@ -106,29 +106,32 @@
             block.removeEventListener('click',createBlock);
             console.error('введите данные');
           } else {
-            body.appendChild(block);
-
+            document.body.appendChild(block);
           }
-        },
-        mDown = function (e) {
-          activeElement = e.target;
-          offsetX = e.target.offsetX;
-          offsetY = e.target.offsetY;
-          console.log(activeElement);
-          console.log(e);
-        },
-        mUp = function () {
-          activeElement = null;
         },
         dragElement = function (e) {
-          if(activeElement) {
-            activeElement.style.top = (e.clientY - offsetY) + 'px';
-          }
+            console.log(e.target.style.top);
+            e.target.style.top = e.clientY - (e.path[0].clientWidth/2) + 'px';
+            e.target.style.left = e.clientX - (e.path[0].clientHeight/2) + 'px';
+        },
+        mDown = function (e) {
+            activeElement = e.target;
+            offsetX = e.target.offsetX;
+            offsetY = e.target.offsetY;
+            console.log(activeElement);
+            console.log(e.target);
+            console.log(e);
+            if(activeElement.className === 'new-block') {
+                document.addEventListener('mousemove', dragElement);
+            }
+        },
+        mUp = function () {
+            activeElement = null;
+            document.removeEventListener('mousemove', dragElement);
         };
         button.addEventListener('click', createBlock);
-        document.addEventListener('mousemove', dragElement);
-        newBlock.addEventListener('mousedown', mDown);
-        newBlock.addEventListener('mouseup', mUp);
+        document.addEventListener('mousedown', mDown);
+        document.addEventListener('mouseup', mUp);
 </script>
 </body>
 </html>
